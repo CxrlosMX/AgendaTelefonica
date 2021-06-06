@@ -47,12 +47,17 @@ public class Agenda {
 
     //Metodo para agregar un contacto
     public void agregarContacto(Contacto c) {
+        int n=0;
         boolean encontrado = false;
         for (int i = 0; i < arreglo.length && !encontrado; i++) {
             if (arreglo[i] == null) {
                 arreglo[i] = c;
+                n=i;
                 encontrado = true;
             }
+        }
+        if(encontrado && arreglo[n]!=null){
+        JOptionPane.showMessageDialog(null,"Contacto Agregado Correctamente","Contacto Agregado",1);
         }
 
     }
@@ -71,7 +76,7 @@ public class Agenda {
     //Metodo para buscar un contacto
     public void buscarContacto(String nombre) {
         int c = 0;
-        if (!agendaVacia()) {
+        
             boolean encontrado = false;
             for (int i = 0; i < arreglo.length && !encontrado; i++) {
                 if (arreglo[i] != null) {
@@ -86,9 +91,7 @@ public class Agenda {
             } else {
                 JOptionPane.showConfirmDialog(null, "Contacto No encontrado", "No encontrado", 0);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Agenda Vacia", "Agenda Vacia", 1);
-        }
+       
     }
 
     //Metodo para verificar si existe un contacto

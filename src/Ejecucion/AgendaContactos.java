@@ -19,9 +19,9 @@ public class AgendaContactos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int op = 0, a=0;
+        int op = 0, a = 0;
         String nombre;
-        Agenda agenda = new Agenda(2);
+        Agenda agenda = new Agenda(10);
         Contacto c;
         do {
             try {
@@ -81,9 +81,9 @@ public class AgendaContactos {
                         break;
                     }
                     case 6: {
-                      //  agenda.espaciosDisponibles();
-                            a = agenda.espaciosLibres();
-                            JOptionPane.showMessageDialog(null, "Espacios Disponibles: " + a, "Espacios disponibles", 1);
+                        //  agenda.espaciosDisponibles();
+                        a = agenda.espaciosLibres();
+                        JOptionPane.showMessageDialog(null, "Espacios Disponibles: " + a, "Espacios disponibles", 1);
                         break;
                     }
                     case 7: {
@@ -95,9 +95,11 @@ public class AgendaContactos {
                         break;
                     }
                     case 8: {
+                        JOptionPane.showMessageDialog(null, "Cerrando agenda", "Agenda Cerrando", 2);
                         break;
                     }
                     default: {
+                        JOptionPane.showMessageDialog(null,"Introduce valores validos por favor","Opcion Incorrecta",0);
 
                         break;
                     }
